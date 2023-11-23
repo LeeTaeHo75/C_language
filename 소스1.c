@@ -2,6 +2,7 @@
 #include <ctype.h>
 
 // 함수 원형 선언
+// 함수 원형 선언
 int count_word(char* s);
 
 // 메인 함수

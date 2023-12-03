@@ -1,23 +1,22 @@
 #include <stdio.h>
 
-void set_max_ptr(int arr[], int size, int **pmax) {
-    int max_index = 0;
-    for (int i = 1; i < size; i++) {
-        if (arr[i] > arr[max_index]) {
-            max_index = i;
-        }
-    }
-    *pmax = &arr[max_index];
+struct point {
+    int x;
+    int y;
+};
+
+int equal(struct point *p1, struct point *p2) {
+    return (p1->x == p2->x && p1->y == p2->y);
 }
 
 int main() {
-    int m[7] = {10, 30, 20, 50, 70, 90, 40};
-    int *pmax;
+    struct point point1 = {1, 2};
+    struct point point2 = {1, 2};
 
-    set_max_ptr(m, 7, &pmax);
-
-    printf("가장 큰 값: %d\n", *pmax);
+    if (equal(&point1, &point2))
+        printf("두 점은 일치합니다.\n");
+    else
+        printf("두 점은 일치하지 않습니다.\n");
 
     return 0;
 }
-
